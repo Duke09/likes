@@ -1,6 +1,7 @@
 .DS_STORE
 
 secrets.json
+*secrets.json
 
 ### VisualStudioCode template
 .vscode
