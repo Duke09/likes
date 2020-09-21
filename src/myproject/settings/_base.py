@@ -10,14 +10,17 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+
+from pathlib import Path
+
 import os
 import json
-from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
 from dotenv import load_dotenv
 
 load_dotenv()
 
-from django.core.exceptions import ImproperlyConfigured
+
 """from env"""
 # def get_secret(setting):
 #     """Get the secret variable or return explicit exception."""
@@ -159,10 +162,25 @@ LOCALE_PATHS = [BASE_DIR / 'locale']
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+from myproject.apps.core.versioning import get_git_changeset_timestamp
+
+with open(os.path.join(BASE_DIR, 'myproject', 'settings', 'last-update.txt'), 'r') as f:
+    timestamp = f.readline().strip()
+
+timestamp = get_git_changeset_timestamp(BASE_DIR)
+
+STATIC_URL = f'/static/{timestamp}/'
 
 STATICFILES_DIRS = [BASE_DIR / 'myproject' / 'site_static']
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+EXTERNAL_BASE = os.path.join(BASE_DIR, "externals")
+EXTERNAL_LIBS_PATH = os.path.join(EXTERNAL_BASE, "libs")
+EXTERNAL_APPS_PATH = os.path.join(EXTERNAL_BASE, "apps")
+
+import sys
+
+sys.path = ["", EXTERNAL_LIBS_PATH, EXTERNAL_APPS_PATH] + sys.path
