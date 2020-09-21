@@ -167,7 +167,7 @@ from myproject.apps.core.versioning import get_git_changeset_timestamp
 with open(os.path.join(BASE_DIR, 'myproject', 'settings', 'last-update.txt'), 'r') as f:
     timestamp = f.readline().strip()
 
-timestamp = get_git_changeset_timestamp(BASE_DIR)
+# timestamp = get_git_changeset_timestamp(BASE_DIR)
 
 STATIC_URL = f'/static/{timestamp}/'
 

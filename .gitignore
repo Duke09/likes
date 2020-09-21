@@ -1,8 +1,66 @@
-.DS_STORE
+# .gitignore
 
+### Python template
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+.hypothesis/
+.pytest_cache/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+db.sqlite3
+db.sqlite3
+*db.sqlite3
+.sqile3/*
+*.sqlite3
+
+# Sphinx documentation
+docs/_build/
+
+# IPython
+profile_default/
+ipython_config.py
+
+# Environments
+env/
+.env
+.venv
+.cfg
+venv/
+ENV/
+
+# Media and Static directories
+/media/
+!/media/.gitkeep
+/static/
+!/static/.gitkeep
+
+# Secrets
 secrets.json
 *secrets.json
 
+.DS_STORE
 ### VisualStudioCode template
 .vscode
 .vscode/*
@@ -20,16 +78,6 @@ Lib/
 Scripts/
 tcl/
 pyvenv.cfg
-
-# Django related 
-# src/main/settings/local.py
-main/settings/local.py
-# static-cdn/  # any collected static files 
-db.sqlite3
-*db.sqlite3
-.sqile3/*
-*.sqlite3
-
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -87,38 +135,12 @@ ettings
 *.manifest
 *.spec
 
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-.hypothesis/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-local_settings.py
-
 # Flask stuff:
 instance/
 .webassets-cache
 
 # Scrapy stuff:
 .scrapy
-
-# Sphinx documentation
-docs/_build/
 
 # PyBuilder
 target/
@@ -134,14 +156,6 @@ celerybeat-schedule
 
 # SageMath parsed files
 *.sage.py
-
-# Environments
-.env
-.venv
-.cfg
-env/
-venv/
-ENV/
 
 # Spyder project settings
 .spyderproject
