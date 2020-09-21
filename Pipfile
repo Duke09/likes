@@ -6,7 +6,12 @@ verify_ssl = true
 [dev-packages]
 
 [packages]
-django = "*"
+djangorestframework = "*"
+coverage = "*"
+django-debug-toolbar = "*"
+selenium = "*"
+Django = "~=3.1.1"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.8"
